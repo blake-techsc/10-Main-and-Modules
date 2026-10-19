@@ -12,7 +12,9 @@ difficultySettings = {
 }
 
 def displayWelcome():
-    """Display welcome screen and get player name."""
+    """
+    Display welcome screen and get player name
+    """
     utilities.clearScreen()
     playerName = utilities.getNonEmptyString("Enter your name: ")
     print(f"Welcome to the adventure, {playerName}!")
@@ -21,13 +23,17 @@ def displayWelcome():
     return playerName
 
 def selectDifficulty():
-    """Selects the diffuculty settings and choice"""
+    """
+    Selects the diffuculty settings and choice
+    """
     utilities.printNumberedList(difficultyOpiton)
     choice = utilities.getValidInt("Select difficulty (1-3): ", 1, 3)
     return difficultySettings[choice]
 
 def playRound(roundNumber, difficultySettings):
-    """Shows locations and round number"""
+    """
+    Shows locations and round number
+    """
     utilities.clearScreen()
     print(f"Round {roundNumber} of 5")
     print()
@@ -54,7 +60,9 @@ def playRound(roundNumber, difficultySettings):
     return points
 
 def displayReport(playerName, roundScores):
-    """Shows explorer name, round info, and final score"""
+    """
+    Shows explorer name, round info, and final score
+    """
     print()
     print("TREASURE REPORT")
     print()
@@ -72,7 +80,9 @@ def displayReport(playerName, roundScores):
     print(f"Total Score: {totalScore}")
     
 def playGame(playerName):
-    """Selects diffuculty, asks for user inputs, and starts the game"""
+    """
+    Selects diffuculty, asks for user inputs, and starts the game
+    """
     roundScores = []
     difficultySettings = selectDifficulty()
     
